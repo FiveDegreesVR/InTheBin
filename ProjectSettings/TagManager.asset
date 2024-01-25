@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Caught
+  - Throwable
+  - BadItem
+  - Floor
   layers:
   - Default
   - TransparentFX
