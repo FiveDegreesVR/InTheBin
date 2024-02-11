@@ -6,7 +6,8 @@ public class Item : MonoBehaviour
 {
     // Start is called before the first frame update
     int points = 0;
-
+    public static float gravity = 8.5f;
+    public static float gravity_strength = 10;
     protected void setNewPoint(int point)
     {
         points = point;
@@ -15,7 +16,10 @@ public class Item : MonoBehaviour
     {
         
     }
-
+    void OnEnable()
+    {
+        this.GetComponent<Rigidbody>().AddForce(new Vector3(0, -gravity, 0) * gravity_strength);
+    }
     // Update is called once per frame
     void Update()
     {

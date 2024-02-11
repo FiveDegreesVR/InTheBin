@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6fac30853a391945bbfef3087d993b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gravity: 3
 --- !u!54 &4280832599435435305
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -117,7 +118,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0

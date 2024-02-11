@@ -30,6 +30,10 @@ public class PhysicThrowScript : MonoBehaviour
 
     private int numberOfThrowables = 0;
     //numberOfThrowables is to just save myself from having to call throwablesPrefabs.length 50,000 times
+
+    private float spawnRate = 2.0f;
+
+    private float time = 0;
     private void OnAwake()
     {
         
@@ -57,12 +61,16 @@ public class PhysicThrowScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        randResult =  rand.Next(1, numOfItemSpawn);
-        for(int i = 0; i < randResult; i++)
+        if (spawnRate <= time)
         {
-            randItem = rand.Next(0, numberOfThrowables);
-            //do something with...
-            ThrowItem(i, randItem);
+            time = 0;
+            randResult = rand.Next(1, numOfItemSpawn);
+            for (int i = 0; i < randResult; i++)
+            {
+                randItem = rand.Next(0, numberOfThrowables);
+                //do something with...
+                ThrowItem(i, randItem);
+            }
         }
     }
 
@@ -78,6 +86,6 @@ public class PhysicThrowScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        time += Time.deltaTime;
     }
 }
