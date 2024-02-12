@@ -1532,6 +1532,7 @@ GameObject:
   - component: {fileID: 524477069}
   - component: {fileID: 524477068}
   - component: {fileID: 524477067}
+  - component: {fileID: 524477070}
   m_Layer: 5
   m_Name: Right
   m_TagString: Untagged
@@ -1642,6 +1643,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524477065}
   m_CullTransparentMesh: 1
+--- !u!114 &524477070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524477065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 406d33cd2f91ab34b8d933326907a3dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonPressed: 0
 --- !u!1001 &581657007
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73298,13 +73312,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225966994}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2c4ef1cfa1b9684a8a63a5ae7dea3b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  trashcan: {fileID: 0}
+  trashcan: {fileID: 1468329579}
 --- !u!114 &1225966996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73312,7 +73326,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1225966994}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7e1ccba76be6b24581768bfaecef7e8, type: 3}
   m_Name: 
@@ -73320,7 +73334,7 @@ MonoBehaviour:
   leftbutton: {fileID: 1335845039}
   rightbutton: {fileID: 524477067}
   trashcan: {fileID: 1468329579}
-  speed: 10
+  speed: 500
 --- !u!114 &1225966997
 MonoBehaviour:
   m_ObjectHideFlags: 0
