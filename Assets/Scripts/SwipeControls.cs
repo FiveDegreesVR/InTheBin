@@ -9,11 +9,12 @@ public class SwipeControls : MonoBehaviour
     private bool moving = false;
     private Vector3 initTouch;
     private Vector3 endTouch;
+    private Rigidbody _rigidbody;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        _rigidbody = trashcan.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -44,7 +45,7 @@ public class SwipeControls : MonoBehaviour
                 endTouch = Camera.main.ScreenToViewportPoint(new Vector3(touch.position.x, touch.position.y, 0.0f));
                 print(endTouch);
                 
-                trashcan.GetComponent<Rigidbody>().AddForce((endTouch-initTouch) * speed, ForceMode.Impulse);
+                _rigidbody.AddForce((endTouch-initTouch) * speed, ForceMode.Impulse);
             }
         }
     }
