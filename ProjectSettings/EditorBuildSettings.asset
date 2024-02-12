@@ -9,5 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Toss-Proto-Ben.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 7f044a3a2f4a0124389128a4e8ec2f84,
+      type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000,
+      guid: 335baa7c5ede2184e8e82a080c3dadff, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: b088521b7e97eae408a27c0663ad3f7b, type: 2}
