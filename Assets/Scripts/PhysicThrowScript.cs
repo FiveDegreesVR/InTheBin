@@ -35,8 +35,21 @@ public class PhysicThrowScript : MonoBehaviour
 
     private float time = 0;
     
+    private PersistentDataObject _persistentDataObject;
+    
     void Start()
     {
+        _persistentDataObject = GameObject.FindWithTag("Persistent").GetComponent<PersistentDataObject>();
+        switch (_persistentDataObject.activeDifficulty)
+        {
+            case Difficulty.Easy:
+                spawnRate = 2.0f;
+                break;
+            case Difficulty.Medium:
+                spawnRate = 1.25f;
+                break;
+        }
+        
         spawnCount = spawnPoints.Length;
         numberOfThrowables = throwablesPrefabs.Length;
         throwables = new GameObject[numberOfThrowables][];

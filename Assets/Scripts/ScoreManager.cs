@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -11,15 +12,27 @@ public class ScoreManager : MonoBehaviour
 
     private static string scoreText = "Score: ";
     private static string lifeText = "Lives: ";
-    private static int pointsScore = 0;
-    private static int lifeScore = 5;
+    private static int pointsScore;
+    private static int lifeScore;
     private static bool setPoints = false;
     private static bool setLifes = false;
 
     private UIManager _uiManager;
 
+    private AudioSource clipAudioSource;
+    public AudioClip scoreClip;
+    public AudioClip loseClip;
+
+    private void Awake()
+    {
+        clipAudioSource = GetComponent<AudioSource>();
+    }
+
     public void Start()
     {
+        pointsScore = 0;
+        lifeScore = 5;
+        
         scoreGUI.text = scoreText + pointsScore;
         lifesGUI.text = lifeText + lifeScore;
         _uiManager = GetComponent<UIManager>();
@@ -29,6 +42,7 @@ public class ScoreManager : MonoBehaviour
     {
         pointsScore += points;
         setPoints = true;
+        clipAudioSource.PlayOneShot(scoreClip);
     }
     
     public int GetPoints()
@@ -40,6 +54,7 @@ public class ScoreManager : MonoBehaviour
     {
         lifeScore -= lifes;
         setLifes = true;
+        clipAudioSource.PlayOneShot(loseClip);
 
         if (lifeScore<=0)
         {
