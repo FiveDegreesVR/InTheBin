@@ -16,6 +16,7 @@ public class TapControls : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        trashcan = GameObject.FindWithTag("TrashCan");
         _rigidbody = trashcan.GetComponent<Rigidbody>();
         _lrButtonPressed1 = leftbutton.GetComponent<LRButtonPressed>();
         _lrButtonPressed = rightbutton.GetComponent<LRButtonPressed>();
