@@ -16,10 +16,13 @@ public class ScoreManager : MonoBehaviour
     private static bool setPoints = false;
     private static bool setLifes = false;
 
+    private UIManager _uiManager;
+
     public void Start()
     {
         scoreGUI.text = scoreText + pointsScore;
         lifesGUI.text = lifeText + lifeScore;
+        _uiManager = GetComponent<UIManager>();
     }
     
     public void AddPoints(int points) 
@@ -28,10 +31,20 @@ public class ScoreManager : MonoBehaviour
         setPoints = true;
     }
     
+    public int GetPoints()
+    {
+        return pointsScore;
+    }
+    
     public void RemoveLives(int lifes) 
     {
         lifeScore -= lifes;
         setLifes = true;
+
+        if (lifeScore<=0)
+        {
+            _uiManager.EndGame();
+        }
     }
 
     public void Update()

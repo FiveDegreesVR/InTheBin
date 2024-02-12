@@ -12,6 +12,8 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/FloorController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/PersistentDataObject.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UIManager.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -90,7 +92,7 @@
       <updated>1707375676778</updated>
       <workItem from="1707375678605" duration="2915000" />
       <workItem from="1707410916548" duration="1976000" />
-      <workItem from="1707719424848" duration="8293000" />
+      <workItem from="1707719424848" duration="12990000" />
     </task>
     <servers />
   </component>
