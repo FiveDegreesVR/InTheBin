@@ -9,5 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Toss-Proto-Ben.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 83201d89982de574691b5ff7f0bd5d9a,
+      type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: b088521b7e97eae408a27c0663ad3f7b, type: 2}
