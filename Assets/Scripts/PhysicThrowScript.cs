@@ -30,12 +30,26 @@ public class PhysicThrowScript : MonoBehaviour
 
     private int numberOfThrowables = 0;
     //numberOfThrowables is to just save myself from having to call throwablesPrefabs.length 50,000 times
-    private void OnAwake()
-    {
-        
-    }
+
+    private float spawnRate = 2.0f;
+
+    private float time = 0;
+    
+    private PersistentDataObject _persistentDataObject;
+    
     void Start()
     {
+        _persistentDataObject = GameObject.FindWithTag("Persistent").GetComponent<PersistentDataObject>();
+        switch (_persistentDataObject.activeDifficulty)
+        {
+            case Difficulty.Easy:
+                spawnRate = 2.0f;
+                break;
+            case Difficulty.Medium:
+                spawnRate = 1.25f;
+                break;
+        }
+        
         spawnCount = spawnPoints.Length;
         numberOfThrowables = throwablesPrefabs.Length;
         throwables = new GameObject[numberOfThrowables][];
@@ -57,27 +71,41 @@ public class PhysicThrowScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        randResult =  rand.Next(1, numOfItemSpawn);
-        for(int i = 0; i < randResult; i++)
+        if (spawnRate <= time)
         {
-            randItem = rand.Next(0, numberOfThrowables);
-            //do something with...
-            ThrowItem(i, randItem);
+            time = 0;
+            randResult = rand.Next(1, numOfItemSpawn);
+            for (int i = 0; i < randResult; i++)
+            {
+                randItem = rand.Next(0, numberOfThrowables);
+                //do something with...
+                ThrowItem(i, randItem);
+            }
         }
     }
 
     public void ThrowItem(int iterator, int randVal)
     {
-        throwables[randVal][tracker[iterator]].SetActive(true);
-        throwables[randVal][tracker[iterator]++].transform.position = spawnPoints[rand.Next(0, spawnCount)].position;
-        if(tracker[iterator] >= maxNumOfItem)
+        GameObject objToThrow = throwables[randVal][tracker[iterator]];
+        if (!objToThrow.activeSelf)
         {
-            tracker[iterator] = 0;
+            objToThrow.SetActive(true);
+            objToThrow.transform.position = (spawnPoints[rand.Next(0, spawnCount)].position + new Vector3(Random.Range(-0.5f,0.5f),0,0));
+            objToThrow.transform.Rotate(Vector3.forward, Random.Range(-90f,90f));
+            if(tracker[iterator] >= maxNumOfItem)
+            {
+                tracker[iterator] = 0;
+            }
+        }
+        else
+        {
+            time = spawnRate;
         }
     }
+
     // Update is called once per frame
     void Update()
     {
-        
+        time += Time.deltaTime;
     }
 }

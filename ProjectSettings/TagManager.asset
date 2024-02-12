@@ -8,6 +8,9 @@ TagManager:
   - Throwable
   - BadItem
   - Floor
+  - TrashCan
+  - Bomb
+  - Persistent
   layers:
   - Default
   - TransparentFX

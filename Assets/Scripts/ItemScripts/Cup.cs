@@ -8,6 +8,6 @@ public class Cup : Item
     // Start is called before the first frame update
     public void Start()
     {
-        base.setNewPoint(point);
+        base.SetNewPoint(point);
     }
 }
