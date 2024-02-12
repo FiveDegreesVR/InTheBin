@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -13,6 +14,11 @@ public class LRButtonPressed : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     }
 
     public void OnPointerUp(PointerEventData eventData)
+    {
+        buttonPressed = false;
+    }
+    
+    public void OnPointerExit(PointerEventData eventData)
     {
         buttonPressed = false;
     }

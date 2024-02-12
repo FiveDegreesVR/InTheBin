@@ -9,6 +9,7 @@ TagManager:
   - BadItem
   - Floor
   - TrashCan
+  - Bomb
   layers:
   - Default
   - TransparentFX

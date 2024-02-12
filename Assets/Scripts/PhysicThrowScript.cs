@@ -34,10 +34,7 @@ public class PhysicThrowScript : MonoBehaviour
     private float spawnRate = 2.0f;
 
     private float time = 0;
-    private void OnAwake()
-    {
-        
-    }
+    
     void Start()
     {
         spawnCount = spawnPoints.Length;
@@ -76,13 +73,23 @@ public class PhysicThrowScript : MonoBehaviour
 
     public void ThrowItem(int iterator, int randVal)
     {
-        throwables[randVal][tracker[iterator]].SetActive(true);
-        throwables[randVal][tracker[iterator]++].transform.position = spawnPoints[rand.Next(0, spawnCount)].position;
-        if(tracker[iterator] >= maxNumOfItem)
+        GameObject objToThrow = throwables[randVal][tracker[iterator]];
+        if (!objToThrow.activeSelf)
         {
-            tracker[iterator] = 0;
+            objToThrow.SetActive(true);
+            objToThrow.transform.position = (spawnPoints[rand.Next(0, spawnCount)].position + new Vector3(Random.Range(-0.5f,0.5f),0,0));
+            objToThrow.transform.Rotate(Vector3.forward, Random.Range(-90f,90f));
+            if(tracker[iterator] >= maxNumOfItem)
+            {
+                tracker[iterator] = 0;
+            }
+        }
+        else
+        {
+            time = spawnRate;
         }
     }
+
     // Update is called once per frame
     void Update()
     {
