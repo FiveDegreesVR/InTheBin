@@ -54,7 +54,7 @@ public class ScoreManager : MonoBehaviour
     {
         lifeScore -= lifes;
         setLifes = true;
-        clipAudioSource.PlayOneShot(loseClip);
+        clipAudioSource.PlayOneShot(loseClip, 0.8f);
 
         if (lifeScore<=0)
         {
