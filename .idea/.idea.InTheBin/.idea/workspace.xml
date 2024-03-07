@@ -44,7 +44,7 @@
 }</component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="F:\Unity Installs\2022.3.17f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="F:\UnityInstalls\2022.3.17f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Users\nikit\Desktop\Fall2023KSUProjects\InTheBin -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\nikit\Desktop\Fall2023KSUProjects\InTheBin" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -52,7 +52,7 @@
       <method v="2" />
     </configuration>
     <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
-      <option name="EXE_PATH" value="F:\Unity Installs\2022.3.17f1\Editor\Unity.exe" />
+      <option name="EXE_PATH" value="F:\UnityInstalls\2022.3.17f1\Editor\Unity.exe" />
       <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Users\nikit\Desktop\Fall2023KSUProjects\InTheBin -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
       <option name="WORKING_DIRECTORY" value="C:\Users\nikit\Desktop\Fall2023KSUProjects\InTheBin" />
       <option name="PASS_PARENT_ENVS" value="1" />
@@ -92,6 +92,8 @@
       <workItem from="1707410916548" duration="1976000" />
       <workItem from="1707719424848" duration="16121000" />
       <workItem from="1707740087119" duration="1775000" />
+      <workItem from="1707787225842" duration="619000" />
+      <workItem from="1709266735962" duration="4887000" />
     </task>
     <servers />
   </component>
