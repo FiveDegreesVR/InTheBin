@@ -5,10 +5,10 @@ using UnityEngine;
 public class AllMovement : MonoBehaviour
 {
     public GameObject trashcan;
-    public float swipeSpeed;
-    public float tiltSpeed;
-    public float tapSpeed;    
-    public float jumpHeight;
+    private float swipeSpeed = 10;
+    private float tiltSpeed = 10;
+    private float tapSpeed = 10;    
+    private float jumpHeight = 10;
 
     private bool moving = false;
     private Vector3 initTouch;
