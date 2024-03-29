@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class AllMovement : MonoBehaviour
 {
+    public GameObject trashcan;
     public float swipeSpeed;
     public float tiltSpeed;
-    public GameObject trashcan;
-    public float height;
+    public float tapSpeed;    
+    public float jumpHeight;
 
     private bool moving = false;
     private Vector3 initTouch;
@@ -32,14 +33,15 @@ public class AllMovement : MonoBehaviour
     void Update()
     {
         //Tilt
-
+        /*
         movement = new Vector3(Input.acceleration.x, 0.0f, (Input.acceleration.y));
         //stateCheck = Input.gyro.attitude;
         //_rigidbody.velocity = (movement - initState) * tiltSpeed;
         _rigidbody.AddForce(Input.gyro.userAcceleration);
         Debug.Log("Initial State: " + initState + " / Movement: " + movement + Input.gyro.userAcceleration);
+        */
 
-        //Swipe
+        //Swipe - Replace the Swipe functionality with the one created by Gabe
 
         if (Input.touchCount > 0)
         {
@@ -55,12 +57,21 @@ public class AllMovement : MonoBehaviour
                 endTouch = Camera.main.ScreenToViewportPoint(new Vector3(touch.position.x, touch.position.y, 0.0f));
                 _rigidbody.AddForce((endTouch - initTouch) * swipeSpeed, ForceMode.Impulse);
             }
-
         }
     }
 
     public void Jump()
     {
-        _rigidbody.AddForce(new Vector3(0.0f, height, 0.0f), ForceMode.Impulse);
+        _rigidbody.AddForce(new Vector3(0.0f, jumpHeight, 0.0f), ForceMode.Impulse);
+    }
+
+    public void LeftTap()
+    {
+        _rigidbody.AddForce(new Vector3(-1.0f, 0.0f, 0.0f), ForceMode.Impulse);
+    }
+
+    public void RightTap()
+    {
+        _rigidbody.AddForce(new Vector3(1.0f, 0.0f, 0.0f), ForceMode.Impulse);
     }
 }
