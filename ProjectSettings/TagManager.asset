@@ -11,6 +11,7 @@ TagManager:
   - TrashCan
   - Bomb
   - Persistent
+  - DropPoint
   layers:
   - Default
   - TransparentFX
