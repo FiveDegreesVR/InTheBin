@@ -15,7 +15,6 @@ public class AllMovement : MonoBehaviour
     private Vector3 endTouch;
     private Vector3 initState;
     private Vector3 movement;
-    private Vector3 force;
     private Rigidbody _rigidbody;
 
     Quaternion stateCheck;
@@ -26,20 +25,17 @@ public class AllMovement : MonoBehaviour
         trashcan = GameObject.FindWithTag("TrashCan");
         _rigidbody = trashcan.GetComponent<Rigidbody>();
         initState = new Vector3(Input.acceleration.x, 0.0f, (Input.acceleration.y));
-        force = new Vector3(3.0f, 0.0f, 3.0f);
     }
 
     // Update is called once per frame
     void Update()
     {
         //Tilt
-        /*
         movement = new Vector3(Input.acceleration.x, 0.0f, (Input.acceleration.y));
         //stateCheck = Input.gyro.attitude;
-        //_rigidbody.velocity = (movement - initState) * tiltSpeed;
+        _rigidbody.velocity = (movement - initState) * tiltSpeed;
         _rigidbody.AddForce(Input.gyro.userAcceleration);
         Debug.Log("Initial State: " + initState + " / Movement: " + movement + Input.gyro.userAcceleration);
-        */
 
         //Swipe - Replace the Swipe functionality with the one created by Gabe
 
@@ -67,11 +63,21 @@ public class AllMovement : MonoBehaviour
 
     public void LeftTap()
     {
-        _rigidbody.AddForce(new Vector3(-1.0f, 0.0f, 0.0f), ForceMode.Impulse);
+        _rigidbody.AddForce(new Vector3(-(tapSpeed), 0.0f, 0.0f), ForceMode.Impulse);
     }
 
     public void RightTap()
     {
-        _rigidbody.AddForce(new Vector3(1.0f, 0.0f, 0.0f), ForceMode.Impulse);
+        _rigidbody.AddForce(new Vector3(tapSpeed, 0.0f, 0.0f), ForceMode.Impulse);
+    }
+
+    public void ForwardTap()
+    {
+        _rigidbody.AddForce(new Vector3(0.0f, tapSpeed, 0.0f), ForceMode.Impulse);
+    }
+
+    public void BackwardTap()
+    {
+        _rigidbody.AddForce(new Vector3(0.0f, -(tapSpeed), 0.0f), ForceMode.Impulse);
     }
 }
