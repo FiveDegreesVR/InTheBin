@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class TrashCanController : MonoBehaviour
 {
-    private ScoreManager _scoreManager;
+    public ScoreManager _scoreManager;
     
     private void Awake()
     {
