@@ -19,8 +19,6 @@ public class UIManager : MonoBehaviour
     private SwipeControls _swipeControls;
     private TiltControl _tiltControl;
 
-    [SerializeField] HighscoreHandler highscoreHandler;
-
     private PersistentDataObject _persistentDataObject;
 
     private void Awake()
@@ -92,8 +90,7 @@ public class UIManager : MonoBehaviour
             TapControlUI.SetActive(false);
         }
         EndGameUI.SetActive(true);
-
+        
         gameOverScoreText.text = _scoreManager.GetPoints().ToString();
-        highscoreHandler.AddHighscoreIfPossible(new HighscoreElement(_scoreManager.GetPoints()));
     }
 }
