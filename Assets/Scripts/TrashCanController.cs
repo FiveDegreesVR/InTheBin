@@ -9,7 +9,7 @@ public class TrashCanController : MonoBehaviour
     
     private void Awake()
     {
-        //_scoreManager = GameObject.FindWithTag("GameController").GetComponent<ScoreManager>();
+        _scoreManager = GameObject.FindWithTag("GameController").GetComponent<ScoreManager>();
     }
 
     private void OnTriggerEnter(Collider other)

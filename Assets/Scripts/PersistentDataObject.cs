@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum ControlScheme
 {
@@ -18,6 +19,16 @@ public class PersistentDataObject : MonoBehaviour
 
     public ControlScheme activeControlScheme = ControlScheme.Tap;
     public Difficulty activeDifficulty = Difficulty.Easy;
+    
+    public void SetHighScore(int value)
+    {
+        PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + ":HighScore", value);
+    }
+    
+    public int GetHighScore()
+    {
+        return PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + ":HighScore", 0);
+    }
 
     void Awake()
     {
@@ -30,6 +41,7 @@ public class PersistentDataObject : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        
     }
 }
 

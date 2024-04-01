@@ -574,6 +574,8 @@ MonoBehaviour:
   TapControlUI: {fileID: 223445976}
   EndGameUI: {fileID: 1499646441}
   gameOverScoreText: {fileID: 274755041}
+  NewHighScoreText: {fileID: 3874737859360584695}
+  gameOverHighScoreText: {fileID: 3874737859360584694}
   movementController: {fileID: 1225966994}
 --- !u!82 &560590113
 AudioSource:
@@ -3319,6 +3321,24 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3dd70c4a49ea5544586f55ae3998670b, type: 3}
+--- !u!114 &3874737859360584694 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7740518836128572174, guid: 3dd70c4a49ea5544586f55ae3998670b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3874737859360584693}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3874737859360584695 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4990523298238559706, guid: 3dd70c4a49ea5544586f55ae3998670b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3874737859360584693}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4188561812358213746
 GameObject:
   m_ObjectHideFlags: 0

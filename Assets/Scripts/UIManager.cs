@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
     public GameObject TapControlUI;
     public GameObject EndGameUI;
     public TextMeshProUGUI gameOverScoreText;
+    public GameObject NewHighScoreText;
+    public TextMeshProUGUI gameOverHighScoreText;
     private ScoreManager _scoreManager;
     private bool tapControlsInUse = false;
 
@@ -90,7 +92,23 @@ public class UIManager : MonoBehaviour
             TapControlUI.SetActive(false);
         }
         EndGameUI.SetActive(true);
+
+        int currentSessionScore = _scoreManager.GetPoints();
+        int storedHighScore = _persistentDataObject.GetHighScore();
         
-        gameOverScoreText.text = _scoreManager.GetPoints().ToString();
+        gameOverScoreText.text = currentSessionScore.ToString();
+
+        if (currentSessionScore > storedHighScore)
+        {
+            storedHighScore = currentSessionScore;
+            _persistentDataObject.SetHighScore(storedHighScore);
+            NewHighScoreText.SetActive(true);
+        }
+        else
+        {
+            NewHighScoreText.SetActive(false);
+        }
+
+        gameOverHighScoreText.text = storedHighScore.ToString();
     }
 }
