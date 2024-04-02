@@ -1831,6 +1831,7 @@ GameObject:
   - component: {fileID: 1225966997}
   - component: {fileID: 1225966996}
   - component: {fileID: 1225966995}
+  - component: {fileID: 1225966999}
   m_Layer: 0
   m_Name: MovementController
   m_TagString: Untagged
@@ -1897,6 +1898,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1225966999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225966994}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c199223eebd54bb4089fcf4df6e6a170, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxSpeed: 0
+  dragSpeed: 0.1
+  forceMultiplier: 50
+  trashcanRigidbody: {fileID: 1591051530}
 --- !u!1 &1318557703 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7297865838095091664, guid: 3dd70c4a49ea5544586f55ae3998670b,
@@ -2071,6 +2088,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c407e5cac6053e44a8b8953d8d1d5ec, type: 3}
+--- !u!54 &1591051530 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 4621102987789474682, guid: 7c407e5cac6053e44a8b8953d8d1d5ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 1591051529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1653169147
 Mesh:
   m_ObjectHideFlags: 0
@@ -3301,6 +3324,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 560590112}
+    - target: {fileID: 4427233423894292801, guid: 3dd70c4a49ea5544586f55ae3998670b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5182739741916251011, guid: 3dd70c4a49ea5544586f55ae3998670b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

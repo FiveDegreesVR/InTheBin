@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
     private TapControls _tapControls;
     private SwipeControls _swipeControls;
     private TiltControl _tiltControl;
+    // private DragController _dragController;
 
     private PersistentDataObject _persistentDataObject;
 
@@ -30,9 +31,11 @@ public class UIManager : MonoBehaviour
         _tapControls = movementController.GetComponent<TapControls>();
         _swipeControls = movementController.GetComponent<SwipeControls>();
         _tiltControl = movementController.GetComponent<TiltControl>();
+        // _dragController = movementController.GetComponent<DragController>();
 
         _tapControls.enabled = false;
         _swipeControls.enabled = false;
+        // _dragController.enabled = false;
         _tiltControl.enabled = false;
     }
 
@@ -48,6 +51,7 @@ public class UIManager : MonoBehaviour
                 break;
             case ControlScheme.Swipe:
                 _swipeControls.enabled = true;
+                // _dragController.enabled = true;
                 break;
             case ControlScheme.Tilt:
                 _tiltControl.enabled = true;
