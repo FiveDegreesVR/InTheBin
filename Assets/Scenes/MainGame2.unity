@@ -525,7 +525,7 @@ MonoBehaviour:
   - {fileID: 970734024985154426, guid: b726ffdf979c35e43bb1612b0f42a360, type: 3}
   - {fileID: 318647622942082097, guid: 27a03de04652e9448b28c4a0f0f120f8, type: 3}
   - {fileID: 5398084970191402153, guid: e764132c29f82a049a7335ea71c92bf6, type: 3}
-  numOfItemsToSpawnBeforePowerup: 3
+  numOfItemsToSpawnBeforePowerup: 15
 --- !u!4 &560590111
 Transform:
   m_ObjectHideFlags: 0
