@@ -23,6 +23,8 @@ public class ScoreManager : MonoBehaviour
     public AudioClip scoreClip;
     public AudioClip loseClip;
 
+    public int multiplier = 1;
+
     private void Awake()
     {
         clipAudioSource = GetComponent<AudioSource>();
@@ -40,7 +42,7 @@ public class ScoreManager : MonoBehaviour
     
     public void AddPoints(int points) 
     {
-        pointsScore += points;
+        pointsScore += points*multiplier;
         setPoints = true;
         clipAudioSource.PlayOneShot(scoreClip);
     }
@@ -48,6 +50,12 @@ public class ScoreManager : MonoBehaviour
     public int GetPoints()
     {
         return pointsScore;
+    }
+
+    public void AddLives(int lifes)
+    {
+        lifeScore += lifes;
+        setLifes = true;
     }
     
     public void RemoveLives(int lifes) 

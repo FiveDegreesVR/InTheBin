@@ -11,7 +11,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SaveSystem/FileHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/PowerUpController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -95,7 +95,7 @@
       <workItem from="1707787225842" duration="619000" />
       <workItem from="1709266735962" duration="4887000" />
       <workItem from="1711971920346" duration="3354000" />
-      <workItem from="1712093371942" duration="5351000" />
+      <workItem from="1712093371942" duration="20184000" />
     </task>
     <servers />
   </component>

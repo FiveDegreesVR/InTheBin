@@ -11,7 +11,7 @@ public class PhysicThrowScript : MonoBehaviour
     //total number of SpawnPoints to save myself from calling spawnPoints.length 50,000 times
     public GameObject[] throwablesPrefabs;
     //This throwables prefabs is for the items we want to throw through the physics script
-    private GameObject[][] throwables;
+    public GameObject[][] throwables;
     //This is jagged array is for the items to be initialized and cycled through for better usage of memory, cpu, and ram
     private int[] tracker;
     //tracker is to know which item in throwables is to be instantialized next

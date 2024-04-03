@@ -11,6 +11,9 @@ TagManager:
   - TrashCan
   - Bomb
   - Persistent
+  - PowerupAddLife
+  - PowerupMagnet
+  - PowerupMultiplier
   layers:
   - Default
   - TransparentFX

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 833661848045496520}
   - component: {fileID: -2026488297207943517}
   - component: {fileID: 1627911245791188033}
+  - component: {fileID: 3759659535069420544}
   m_Layer: 0
   m_Name: PaperBall
   m_TagString: Throwable
@@ -1560,3 +1561,15 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.07891456
   m_Center: {x: 0.01119113, y: 0.0027055517, z: -0.001359582}
+--- !u!114 &3759659535069420544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8600793726233211480}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 730a9cfef0d01d3458d822aebbc272ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
