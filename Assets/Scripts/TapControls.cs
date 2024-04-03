@@ -37,6 +37,6 @@ public class TapControls : MonoBehaviour
 
     private void MoveCan(float horizontalInput)
     {
-        _rigidbody.AddForce(new Vector3(horizontalInput * speed * Time.deltaTime, 0));
+        _rigidbody.AddForce(new Vector3(horizontalInput * speed * Time.deltaTime, 0), ForceMode.Acceleration);
     }
 }

@@ -8,6 +8,7 @@ public class SwipeControls : MonoBehaviour
     public GameObject trashcan;
     private bool moving = false;
     private Vector3 initTouch;
+    private Vector3 currentTouch;
     private Vector3 endTouch;
     private Rigidbody _rigidbody;
 
@@ -38,6 +39,12 @@ public class SwipeControls : MonoBehaviour
             if (touch.phase == TouchPhase.Began)
             {
                 initTouch = Camera.main.ScreenToViewportPoint(new Vector3(touch.position.x, touch.position.y, 0.0f));
+            }
+            
+            if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
+            {
+                currentTouch = Camera.main.ScreenToViewportPoint(new Vector3(touch.position.x, touch.position.y, 0.0f));
+                _rigidbody.AddForce((currentTouch-initTouch) * speed/3, ForceMode.Force);
             }
             
             if (touch.phase == TouchPhase.Ended)

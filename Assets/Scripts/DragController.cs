@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,13 +10,9 @@ public class DragController : MonoBehaviour
     private Vector3 objectStartPos;
     private Vector3 currentForce;
     public float maxSpeed; // Maximum speed limit
-    private float smoothTime = 0.1f; // Smoothing time for force application
-    private Vector3 currentVelocity = Vector3.zero;
-    private bool isSwipingInSameDirection = true;
-
-    public float dragSpeed = 0.1f;
-    public float forceMultiplier = 5f; // Adjust this value to control the force applied
+    public float acceleration; // Acceleration factor
     public Rigidbody trashcanRigidbody;
+
 
     void Update()
     {
@@ -35,8 +30,7 @@ public class DragController : MonoBehaviour
                     isDragging = true;
                     hasReleased = false;
                     touchStartPos = touch.position;
-                    objectStartPos = trashcanRigidbody.position;
-                    isSwipingInSameDirection = true; // Assume swiping in the same direction until proven otherwise
+                    objectStartPos = transform.position;
                     break;
                 case TouchPhase.Moved:
                 case TouchPhase.Stationary:
@@ -44,23 +38,16 @@ public class DragController : MonoBehaviour
                     {
                         Vector2 direction = touch.position - touchStartPos;
                         float distance = direction.magnitude;
+                        float swipeSpeed = distance / touch.deltaTime;
                         Vector2 swipeDirection = direction.normalized;
-                        currentForce = new Vector3(swipeDirection.x, 0, 0) * distance * dragSpeed * forceMultiplier;
-                        Debug.Log(currentForce);
 
-                        // Smooth out force application
-                        currentForce = Vector3.SmoothDamp(trashcanRigidbody.velocity, currentForce, ref currentVelocity, smoothTime);
-                        // Apply max speed limit
-                        currentForce = Vector3.ClampMagnitude(currentForce, maxSpeed);
+                        // Calculate force based on acceleration
+                        float currentSpeed = currentForce.magnitude;
+                        float targetSpeed = Mathf.Min(currentSpeed + swipeSpeed * acceleration * Time.deltaTime, maxSpeed);
+                        currentForce = swipeDirection * targetSpeed;
 
-                        trashcanRigidbody.velocity = currentForce;
-
-                        // Check if swiping in opposite direction
-                        float dotProduct = Vector2.Dot(direction.normalized, currentVelocity.normalized);
-                        if (dotProduct < 0f)
-                        {
-                            isSwipingInSameDirection = false;
-                        }
+                        // Apply force as impulse
+                        trashcanRigidbody.AddForce(currentForce - trashcanRigidbody.velocity, ForceMode.Acceleration);
                     }
                     break;
                 case TouchPhase.Ended:
@@ -68,13 +55,6 @@ public class DragController : MonoBehaviour
                     hasReleased = true;
                     break;
             }
-        }
-
-        // If the direction changes while swiping, reset speed and velocity
-        if (!isDragging && !isSwipingInSameDirection && hasReleased)
-        {
-            trashcanRigidbody.velocity = Vector3.zero;
-            currentForce = Vector3.zero;
         }
     }
 }
