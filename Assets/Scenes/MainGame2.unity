@@ -472,6 +472,7 @@ GameObject:
   - component: {fileID: 560590109}
   - component: {fileID: 560590112}
   - component: {fileID: 560590113}
+  - component: {fileID: 560590114}
   m_Layer: 0
   m_Name: SceneManager
   m_TagString: GameController
@@ -495,6 +496,7 @@ MonoBehaviour:
   lifesGUI: {fileID: 2030296348}
   scoreClip: {fileID: 8300000, guid: 9f06882dbdd5c4c4488b99247e51e5a4, type: 3}
   loseClip: {fileID: 8300000, guid: f809a00cb34b9d84b9da0e546fc3e8e4, type: 3}
+  multiplier: 1
 --- !u!114 &560590110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -519,6 +521,11 @@ MonoBehaviour:
   - {fileID: 6370836030437943574, guid: 15a9b26efc3949f4f96af9df06cf9e20, type: 3}
   - {fileID: 8600793726233211480, guid: a1cc7d705521a994589e2e2e31fbb2d0, type: 3}
   - {fileID: 2966674289109283297, guid: 7e236a462d2b2c847a39a7c60407dd0b, type: 3}
+  powerupPrefabs:
+  - {fileID: 970734024985154426, guid: b726ffdf979c35e43bb1612b0f42a360, type: 3}
+  - {fileID: 318647622942082097, guid: 27a03de04652e9448b28c4a0f0f120f8, type: 3}
+  - {fileID: 5398084970191402153, guid: e764132c29f82a049a7335ea71c92bf6, type: 3}
+  numOfItemsToSpawnBeforePowerup: 3
 --- !u!4 &560590111
 Transform:
   m_ObjectHideFlags: 0
@@ -650,6 +657,27 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &560590114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 560590108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df4b9aad3e29dc74891ef34e5b8b0735, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activePowerup: 0
+  storedPowerupUIButton: {fileID: 1999946126}
+  noneUI: {fileID: 21300000, guid: a10f17b511fed2e43b9f8112ec1f21d9, type: 3}
+  addLifeUI: {fileID: 21300000, guid: c916fc5d1cf0e4e48ba0c6923b0e918d, type: 3}
+  magnetUI: {fileID: 21300000, guid: 8f19a3e19d83fbd41916c987abb7439d, type: 3}
+  multiplierUI: {fileID: 21300000, guid: 5ef9eeadf81c85147b4f7e7f6055b6ae, type: 3}
+  PowerupText: {fileID: 1999946125}
+  twoXScoreContextUI: {fileID: 1999946124}
+  magnetContextUI: {fileID: 1999946123}
 --- !u!1 &602623325
 GameObject:
   m_ObjectHideFlags: 0
@@ -2768,6 +2796,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0063a8153fb589a448cd3aa573c25007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1999946123 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2565485275257355687, guid: 3dd70c4a49ea5544586f55ae3998670b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2030296346}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1999946124 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7233649906107407259, guid: 3dd70c4a49ea5544586f55ae3998670b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2030296346}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1999946125 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7793846949122078672, guid: 3dd70c4a49ea5544586f55ae3998670b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2030296346}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1999946126 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8076315035995285380, guid: 3dd70c4a49ea5544586f55ae3998670b,
+    type: 3}
+  m_PrefabInstance: {fileID: 2030296346}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2030296346
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2900,6 +2964,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5178066065041739572, guid: 3dd70c4a49ea5544586f55ae3998670b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 560590114}
+    - target: {fileID: 5178066065041739572, guid: 3dd70c4a49ea5544586f55ae3998670b,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UseStoredPowerup
       objectReference: {fileID: 0}
     - target: {fileID: 5182739741916251011, guid: 3dd70c4a49ea5544586f55ae3998670b,
         type: 3}

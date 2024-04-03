@@ -67,11 +67,12 @@ public class PowerUpController : MonoBehaviour
     public void UseStoredPowerup()
     {
         activePowerup = storedPowerup;
+        storedPowerup = Powerup.None;
         CancelInvoke(nameof(PowerupExpired));
         storedPowerupUIButton.sprite = noneUI;
         PowerupText.text = "Powerup:\nNone";
         
-        switch (storedPowerup)
+        switch (activePowerup)
         {
             case Powerup.AddLife:
                 //add life 

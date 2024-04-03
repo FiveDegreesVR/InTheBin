@@ -19,8 +19,23 @@ public class FloorController : MonoBehaviour
             _scoreManager.RemoveLives(1);
             other.gameObject.SetActive(false);
         }
+        
+        if (other.gameObject.CompareTag("PowerupAddLife"))
+        {
+            other.gameObject.SetActive(false);
+        }
+        
+        if (other.gameObject.CompareTag("PowerupMagnet"))
+        {
+            other.gameObject.SetActive(false);
+        }
+        
+        if (other.gameObject.CompareTag("PowerupMultiplier"))
+        {
+            other.gameObject.SetActive(false);
+        }
 
-        if (other.gameObject.CompareTag("Bomb"))
+        if (other.gameObject.gameObject.CompareTag("Bomb"))
         {
             _scoreManager.AddPoints(2);
             other.gameObject.SetActive(false);

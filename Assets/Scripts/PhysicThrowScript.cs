@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+
 
 public class PhysicThrowScript : MonoBehaviour
 {
@@ -10,8 +12,10 @@ public class PhysicThrowScript : MonoBehaviour
     public int spawnCount;
     //total number of SpawnPoints to save myself from calling spawnPoints.length 50,000 times
     public GameObject[] throwablesPrefabs;
+    public GameObject[] powerupPrefabs;
     //This throwables prefabs is for the items we want to throw through the physics script
     public GameObject[][] throwables;
+    private List<GameObject> powerupInstances = new List<GameObject>();
     //This is jagged array is for the items to be initialized and cycled through for better usage of memory, cpu, and ram
     private int[] tracker;
     //tracker is to know which item in throwables is to be instantialized next
@@ -36,6 +40,10 @@ public class PhysicThrowScript : MonoBehaviour
     private float time = 0;
     
     private PersistentDataObject _persistentDataObject;
+
+    private int spawnedItemCount = 0;
+    private int indexInSpawnList = 0;
+    public int numOfItemsToSpawnBeforePowerup = 15;
     
     void Start()
     {
@@ -67,6 +75,18 @@ public class PhysicThrowScript : MonoBehaviour
                 //and a total of maxNumOfItem copies of the same item.
             }
         }
+        
+        // Debug.Log(powerupPrefabs.Length);
+
+        foreach (GameObject prefab in powerupPrefabs)
+        {
+            GameObject instanceObj = Instantiate(prefab);
+            powerupInstances.Add(instanceObj);
+            instanceObj.SetActive(false);
+        }
+        
+        spawnedItemCount = 0;
+        indexInSpawnList = 0;
     }
 
     private void FixedUpdate()
@@ -90,6 +110,7 @@ public class PhysicThrowScript : MonoBehaviour
         if (!objToThrow.activeSelf)
         {
             objToThrow.SetActive(true);
+            spawnedItemCount++;
             objToThrow.transform.position = (spawnPoints[rand.Next(0, spawnCount)].position + new Vector3(Random.Range(-0.5f,0.5f),0,0));
             objToThrow.transform.Rotate(Vector3.forward, Random.Range(-90f,90f));
             if(tracker[iterator] >= maxNumOfItem)
@@ -100,6 +121,29 @@ public class PhysicThrowScript : MonoBehaviour
         else
         {
             time = spawnRate;
+        }
+
+        if (spawnedItemCount > numOfItemsToSpawnBeforePowerup)
+        {
+            Invoke(nameof(SpawnPowerup),2.0f);
+            spawnedItemCount = 0;
+        }
+    }
+
+    private void SpawnPowerup()
+    {
+        if (indexInSpawnList >= powerupInstances.Count)
+        {
+            powerupInstances = powerupInstances.OrderBy( x => Random.value ).ToList( );
+            indexInSpawnList = 0;
+        }
+        
+        if (indexInSpawnList < powerupInstances.Count)
+        {
+            powerupInstances[indexInSpawnList].SetActive(true);
+            powerupInstances[indexInSpawnList].transform.position = (spawnPoints[rand.Next(0, spawnCount)].position + new Vector3(Random.Range(-0.5f,0.5f),0,0));
+            powerupInstances[indexInSpawnList].transform.Rotate(Vector3.forward, Random.Range(-90f,90f));
+            indexInSpawnList++;
         }
     }
 
