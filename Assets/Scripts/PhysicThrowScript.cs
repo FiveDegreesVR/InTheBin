@@ -69,7 +69,7 @@ public class PhysicThrowScript : MonoBehaviour
             tracker[i] = 0;
             for (int j = 0; j < maxNumOfItem; j++)
             {
-                throwables[i][j] = Instantiate(throwablesPrefabs[i]);
+                throwables[i][j] = Instantiate(throwablesPrefabs[i], transform);
                 throwables[i][j].SetActive(false);
                 //This makes a set of n items, n being the length of the throwables prefabs
                 //and a total of maxNumOfItem copies of the same item.
@@ -80,7 +80,7 @@ public class PhysicThrowScript : MonoBehaviour
 
         foreach (GameObject prefab in powerupPrefabs)
         {
-            GameObject instanceObj = Instantiate(prefab);
+            GameObject instanceObj = Instantiate(prefab, transform);
             powerupInstances.Add(instanceObj);
             instanceObj.SetActive(false);
         }
