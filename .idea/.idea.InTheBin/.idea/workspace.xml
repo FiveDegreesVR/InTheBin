@@ -12,7 +12,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/PowerUpController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.arfoundation@5.1.2/Runtime/ARFoundation/ARInputManager.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Actions/InputActionState.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
@@ -98,6 +98,8 @@
       <workItem from="1711971920346" duration="3354000" />
       <workItem from="1712093371942" duration="24421000" />
       <workItem from="1712193643516" duration="689000" />
+      <workItem from="1712213171549" duration="596000" />
+      <workItem from="1712217526688" duration="4912000" />
     </task>
     <servers />
   </component>

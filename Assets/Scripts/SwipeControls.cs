@@ -44,13 +44,13 @@ public class SwipeControls : MonoBehaviour
             if (touch.phase == TouchPhase.Moved || touch.phase == TouchPhase.Stationary)
             {
                 currentTouch = Camera.main.ScreenToViewportPoint(new Vector3(touch.position.x, touch.position.y, 0.0f));
-                _rigidbody.AddForce((currentTouch-initTouch) * speed/3, ForceMode.Force);
+                _rigidbody.AddRelativeForce((currentTouch-initTouch) * speed/3, ForceMode.Force);
             }
             
             if (touch.phase == TouchPhase.Ended)
             {
                 endTouch = Camera.main.ScreenToViewportPoint(new Vector3(touch.position.x, touch.position.y, 0.0f));
-                _rigidbody.AddForce((endTouch-initTouch) * speed, ForceMode.Impulse);
+                _rigidbody.AddRelativeForce((endTouch-initTouch) * speed, ForceMode.Impulse);
             }
         }
     }
