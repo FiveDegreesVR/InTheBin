@@ -1,25 +1,14 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThrowableController : MonoBehaviour
+public class NonPointsThrowableController : MonoBehaviour
 {
-
-    private PowerUpController _powerUpController;
-    private GameObject trashCan;
-    private Rigidbody rb;
-    
     private GameObject floor;
     private Transform shadow;
     
-    // Start is called before the first frame update
     void Awake()
     {
-        trashCan = GameObject.FindWithTag("TrashCan");
-        _powerUpController = GameObject.FindWithTag("GameController").GetComponent<PowerUpController>();
-        rb = GetComponent<Rigidbody>();
-        
         floor = GameObject.FindWithTag("Floor");
         shadow = GetComponentInChildren<SpriteRenderer>().transform;
         
@@ -35,15 +24,9 @@ public class ThrowableController : MonoBehaviour
     {
         shadow.gameObject.SetActive(false);
     }
-
-    // Update is called once per frame
+    
     void FixedUpdate()
     {
-        if (_powerUpController.activePowerup == PowerUpController.Powerup.Magnet)
-        {
-            rb.AddForce((Vector3.right*(trashCan.transform.position.x-transform.position.x))/4, ForceMode.VelocityChange);
-        }
-        
         shadow.transform.position = new Vector3(transform.position.x, floor.transform.position.y+0.01f, transform.position.z);
     }
 }
