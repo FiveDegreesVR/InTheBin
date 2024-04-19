@@ -125,7 +125,7 @@ public class PhysicThrowScript : MonoBehaviour
 
         if (spawnedItemCount > numOfItemsToSpawnBeforePowerup)
         {
-            Invoke(nameof(SpawnPowerup),2.0f);
+            Invoke(nameof(SpawnPowerup),5.0f);
             spawnedItemCount = 0;
         }
     }
