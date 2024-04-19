@@ -25,8 +25,22 @@ public class NonPointsThrowableController : MonoBehaviour
         shadow.gameObject.SetActive(false);
     }
     
+    public float Scale(float OldMin, float OldMax, float NewMin, float NewMax, float OldValue){
+     
+        float OldRange = (OldMax - OldMin);
+        float NewRange = (NewMax - NewMin);
+        float NewValue = (((OldValue - OldMin) * NewRange) / OldRange) + NewMin;
+     
+        return(NewValue);
+    }
+    
     void FixedUpdate()
     {
         shadow.transform.position = new Vector3(transform.position.x, floor.transform.position.y+0.01f, transform.position.z);
+
+        float shadowScale = Scale(0, 7.5f, 0f, 0.1f, transform.position.y);
+        shadowScale = -(shadowScale - 0.1f);
+        shadow.transform.localScale = new Vector3(shadowScale, shadowScale, shadowScale);
+        
     }
 }
