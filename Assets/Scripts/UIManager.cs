@@ -85,6 +85,11 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene(sceneIndex);
     }
+    
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
     public void EndGame()
     {
