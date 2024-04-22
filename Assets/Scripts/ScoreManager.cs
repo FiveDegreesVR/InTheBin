@@ -22,6 +22,11 @@ public class ScoreManager : MonoBehaviour
     private AudioSource clipAudioSource;
     public AudioClip scoreClip;
     public AudioClip loseClip;
+    
+    [SerializeField]private AudioClip powerupUsed;
+    [SerializeField]private AudioClip powerupAdded;
+    [SerializeField]private AudioClip powerupLost;
+    [SerializeField]private AudioClip powerupExpired;
 
     public int multiplier = 1;
 
@@ -38,6 +43,23 @@ public class ScoreManager : MonoBehaviour
         scoreGUI.text = scoreText + pointsScore;
         lifesGUI.text = lifeText + lifeScore;
         _uiManager = GetComponent<UIManager>();
+    }
+    
+    public void PowerupUsed() 
+    {
+        clipAudioSource.PlayOneShot(powerupUsed);
+    }
+    public void PowerupAdded() 
+    {
+        clipAudioSource.PlayOneShot(powerupAdded);
+    }
+    public void PowerupLost() 
+    {
+        clipAudioSource.PlayOneShot(powerupLost);
+    }
+    public void PowerupExpired() 
+    {
+        clipAudioSource.PlayOneShot(powerupExpired);
     }
     
     public void AddPoints(int points) 

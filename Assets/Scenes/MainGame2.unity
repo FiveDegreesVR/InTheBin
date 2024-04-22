@@ -496,6 +496,10 @@ MonoBehaviour:
   lifesGUI: {fileID: 2030296348}
   scoreClip: {fileID: 8300000, guid: 9f06882dbdd5c4c4488b99247e51e5a4, type: 3}
   loseClip: {fileID: 8300000, guid: f809a00cb34b9d84b9da0e546fc3e8e4, type: 3}
+  powerupUsed: {fileID: 8300000, guid: 997c9af32a48b3d40adccf37e4df03f0, type: 3}
+  powerupAdded: {fileID: 8300000, guid: ccc0fcd7f0124904ebaf558f06638fa5, type: 3}
+  powerupLost: {fileID: 8300000, guid: d48f57db6d4cdeb46b65a9bdaba0aecc, type: 3}
+  powerupExpired: {fileID: 8300000, guid: 5b629b8c2928fa943bdf9003118e7994, type: 3}
   multiplier: 1
 --- !u!114 &560590110
 MonoBehaviour:

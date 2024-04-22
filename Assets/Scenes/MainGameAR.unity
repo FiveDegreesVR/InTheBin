@@ -1218,6 +1218,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 259405656551945044, guid: 952ce48a06335d54783259efcd6db007,
+        type: 3}
+      propertyPath: powerupLost
+      value: 
+      objectReference: {fileID: 8300000, guid: d48f57db6d4cdeb46b65a9bdaba0aecc, type: 3}
+    - target: {fileID: 259405656551945044, guid: 952ce48a06335d54783259efcd6db007,
+        type: 3}
+      propertyPath: powerupUsed
+      value: 
+      objectReference: {fileID: 8300000, guid: 997c9af32a48b3d40adccf37e4df03f0, type: 3}
+    - target: {fileID: 259405656551945044, guid: 952ce48a06335d54783259efcd6db007,
+        type: 3}
+      propertyPath: powerupAdded
+      value: 
+      objectReference: {fileID: 8300000, guid: ccc0fcd7f0124904ebaf558f06638fa5, type: 3}
+    - target: {fileID: 259405656551945044, guid: 952ce48a06335d54783259efcd6db007,
+        type: 3}
+      propertyPath: powerupExpired
+      value: 
+      objectReference: {fileID: 8300000, guid: 5b629b8c2928fa943bdf9003118e7994, type: 3}
     - target: {fileID: 784330979351879174, guid: 952ce48a06335d54783259efcd6db007,
         type: 3}
       propertyPath: m_Mesh

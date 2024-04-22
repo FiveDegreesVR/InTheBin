@@ -43,6 +43,8 @@ public class PowerUpController : MonoBehaviour
         storedPowerup = newPowerup;
         storedPowerupUIButton.sprite = noneUI;
         
+        _scoreManager.PowerupAdded();
+        
         switch (storedPowerup)
         {
             case Powerup.AddLife:
@@ -71,6 +73,7 @@ public class PowerUpController : MonoBehaviour
         CancelInvoke(nameof(PowerupExpired));
         storedPowerupUIButton.sprite = noneUI;
         PowerupText.text = "Powerup:\nNone";
+        _scoreManager.PowerupUsed();
         
         switch (activePowerup)
         {
@@ -106,6 +109,7 @@ public class PowerUpController : MonoBehaviour
         
         magnetContextUI.SetActive(false);
         activePowerup = Powerup.None;
+        _scoreManager.PowerupExpired();
     }
 
 }
