@@ -3027,6 +3027,7 @@ GameObject:
   m_Component:
   - component: {fileID: 875384496}
   - component: {fileID: 875384495}
+  - component: {fileID: 875384497}
   m_Layer: 0
   m_Name: PersistentData
   m_TagString: Persistent
@@ -3063,6 +3064,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &875384497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875384494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 462e21f22da0e874b93cf1cd25ef29c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonSFX: {fileID: 8300000, guid: 21b4b9750036c0343a148c641ecc127a, type: 3}
 --- !u!1 &931393081
 GameObject:
   m_ObjectHideFlags: 0
@@ -3974,7 +3988,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1199503368
 MonoBehaviour:
   m_ObjectHideFlags: 0
