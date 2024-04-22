@@ -54,7 +54,7 @@ public class PhysicThrowScript : MonoBehaviour
                 spawnRate = 2.0f;
                 break;
             case Difficulty.Medium:
-                spawnRate = 1.25f;
+                spawnRate = 1.40f;
                 break;
         }
         

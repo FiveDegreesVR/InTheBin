@@ -2849,11 +2849,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 560590112}
-    - target: {fileID: 1630982477308193031, guid: 3dd70c4a49ea5544586f55ae3998670b,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: UnpauseGame
-      objectReference: {fileID: 0}
     - target: {fileID: 2229392693784036007, guid: 3dd70c4a49ea5544586f55ae3998670b,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2959,56 +2954,26 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 560590112}
-    - target: {fileID: 3396000640321194712, guid: 3dd70c4a49ea5544586f55ae3998670b,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ReloadScene
-      objectReference: {fileID: 0}
     - target: {fileID: 4192158592266411207, guid: 3dd70c4a49ea5544586f55ae3998670b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 560590112}
-    - target: {fileID: 4192158592266411207, guid: 3dd70c4a49ea5544586f55ae3998670b,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 4427233423894292801, guid: 3dd70c4a49ea5544586f55ae3998670b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5178066065041739572, guid: 3dd70c4a49ea5544586f55ae3998670b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 560590114}
-    - target: {fileID: 5178066065041739572, guid: 3dd70c4a49ea5544586f55ae3998670b,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: UseStoredPowerup
-      objectReference: {fileID: 0}
     - target: {fileID: 5182739741916251011, guid: 3dd70c4a49ea5544586f55ae3998670b,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 560590112}
-    - target: {fileID: 5182739741916251011, guid: 3dd70c4a49ea5544586f55ae3998670b,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangeScene
-      objectReference: {fileID: 0}
-    - target: {fileID: 5638902009179156900, guid: 3dd70c4a49ea5544586f55ae3998670b,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 560590112}
     - target: {fileID: 5638902009179156900, guid: 3dd70c4a49ea5544586f55ae3998670b,
         type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ReloadScene
-      objectReference: {fileID: 0}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 560590112}
     - target: {fileID: 5826310994682622023, guid: 3dd70c4a49ea5544586f55ae3998670b,
         type: 3}
       propertyPath: m_Name
@@ -3019,11 +2984,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 560590112}
-    - target: {fileID: 7224355762875878574, guid: 3dd70c4a49ea5544586f55ae3998670b,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: PauseGame
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
