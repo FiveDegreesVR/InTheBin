@@ -68,6 +68,18 @@ public class PowerUpController : MonoBehaviour
 
     public void UseStoredPowerup()
     {
+        if (storedPowerup == Powerup.None)
+        {
+            return;
+        }
+        
+        if (activePowerup == Powerup.Magnet || activePowerup == Powerup.TwoXMultiplier)
+        {
+            twoXScoreContextUI.SetActive(false);
+            _scoreManager.multiplier = 1;
+            magnetContextUI.SetActive(false);
+        }
+        
         activePowerup = storedPowerup;
         storedPowerup = Powerup.None;
         CancelInvoke(nameof(PowerupExpired));
