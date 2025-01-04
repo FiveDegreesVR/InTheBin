@@ -17,6 +17,6 @@ public class TiltControl : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 movement = new Vector3(Input.acceleration.x, 0.0f, 0.0f);
-        _rigidbody.velocity = movement * speed;
+        _rigidbody.linearVelocity = movement * speed;
     }
 }

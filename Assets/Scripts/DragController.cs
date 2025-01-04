@@ -47,7 +47,7 @@ public class DragController : MonoBehaviour
                         currentForce = swipeDirection * targetSpeed;
 
                         // Apply force as impulse
-                        trashcanRigidbody.AddForce(currentForce - trashcanRigidbody.velocity, ForceMode.Acceleration);
+                        trashcanRigidbody.AddForce(currentForce - trashcanRigidbody.linearVelocity, ForceMode.Acceleration);
                     }
                     break;
                 case TouchPhase.Ended:

@@ -121,12 +121,12 @@ public class ARTemplateMenuManager : MonoBehaviour
 
     [SerializeField]
     [Tooltip("The interaction group for the AR demo scene.")]
-    XRInteractionGroup m_InteractionGroup;
+    UnityEngine.XR.Interaction.Toolkit.Interactors.XRInteractionGroup m_InteractionGroup;
 
     /// <summary>
     /// The interaction group for the AR demo scene.
     /// </summary>
-    public XRInteractionGroup interactionGroup
+    public UnityEngine.XR.Interaction.Toolkit.Interactors.XRInteractionGroup interactionGroup
     {
         get => m_InteractionGroup;
         set => m_InteractionGroup = value;
